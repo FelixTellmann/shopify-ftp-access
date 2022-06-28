@@ -464,7 +464,7 @@ var ftpd = require("./lib/ftpd");
                 return;
             }
             this.getTheme(path, function (error, theme) { return __awaiter(_this, void 0, void 0, function () {
-                var err_5;
+                var body, err_5;
                 return __generator(this, function (_a) {
                     switch (_a.label) {
                         case 0:
@@ -473,8 +473,9 @@ var ftpd = require("./lib/ftpd");
                             _a.label = 1;
                         case 1:
                             _a.trys.push([1, 3, , 4]);
-                            return [4, this.config.API.get({
+                            return [4, this.config.API.put({
                                     path: "themes/".concat(theme.id, "/assets"),
+                                    type: shopify_typed_node_api_1.DataType.JSON,
                                     data: {
                                         asset: {
                                             key: path.slice(1).split("/").slice(1).join("/"),
@@ -484,7 +485,7 @@ var ftpd = require("./lib/ftpd");
                                     tries: 20
                                 })];
                         case 2:
-                            _a.sent();
+                            body = (_a.sent()).body;
                             console.log(chalk.green("Updated File: ".concat(path.split("/").at(-1))));
                             callback();
                             return [3, 4];

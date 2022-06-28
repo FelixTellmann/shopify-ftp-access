@@ -392,8 +392,9 @@ const ftpd = require("./lib/ftpd");
         if (error) return callback(error);
 
         try {
-          await (this.config.API as RestClient).get<Asset.Update>({
+          const { body } = await (this.config.API as RestClient).put<Asset.Update>({
             path: `themes/${theme.id}/assets`,
+            type: DataType.JSON,
             data: {
               asset: {
                 key: path.slice(1).split("/").slice(1).join("/"),
