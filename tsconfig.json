@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "module": "CommonJS",
+    "outDir": ".",
+    "noImplicitAny": false,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "sourceMap": false,
+//    "outFile": "aiko-dev/assets/theme.js.liquid",
+    "isolatedModules": false,
+    "resolveJsonModule": false,
+    "noEmit": false,
+    "declaration": false,
+    "incremental": true,
+    "allowJs": true,
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true
+  },
+  "include": [
+    "./shopify-ftp.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

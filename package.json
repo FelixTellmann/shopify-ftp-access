@@ -1,0 +1,37 @@
+{
+  "name": "shopify-ftp-access",
+  "version": "3.0.2",
+  "description": "FTP Proxy for Shopify",
+  "main": "shopify.js",
+  "bin": {
+    "shopify-ftp": "./shopify.js"
+  },
+  "scripts": {
+    "test": "mocha test",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FelixTellmann/shopify-ftp-access.git"
+  },
+  "keywords": [
+    "shopify",
+    "api",
+    "ftp",
+    "proxy",
+    "gateway"
+  ],
+  "author": "Felix Tellmann",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^18.0.0",
+    "chalk": "4.1.2",
+    "commander": "^2.5.0",
+    "dateformat": "^1.0.7-1.2.3",
+    "fx-style": "^1.6.17",
+    "request": "^2.47.0",
+    "shopify-typed-node-api": "^2.0.18",
+    "stat-mode": "^1.0.0",
+    "typescript": "^4.7.4"
+  }
+}
