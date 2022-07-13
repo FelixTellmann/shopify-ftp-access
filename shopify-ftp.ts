@@ -352,6 +352,10 @@ const ftpd = require("./lib/ftpd");
           });
         } else {
           try {
+            this.itemCache[path] = {
+              ...item,
+              downloaded_at: Date.now(),
+            };
             const { body } = await (this.config.API as RestClient).get<Asset.GetById>({
               path: `themes/${theme.id}/assets`,
               query: {
