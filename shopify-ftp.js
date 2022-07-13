@@ -459,9 +459,8 @@ var ftpd = require("./lib/ftpd");
         writeFile: function (path, data, callback) {
             var _this = this;
             var _a;
-            console.log(this.itemCache[path]);
-            if (((_a = this.itemCache[path]) === null || _a === void 0 ? void 0 : _a.downloaded_at) > Date.now() - 1000 * 30) {
-                console.log(chalk.yellowBright("Downloaded less than 30s ago: ".concat(path.split("/").at(-1))));
+            if (((_a = this.itemCache[path]) === null || _a === void 0 ? void 0 : _a.downloaded_at) > Date.now() - 1000 * 20) {
+                console.log(chalk.yellowBright("Downloaded less than 20s ago: ".concat(path.split("/").at(-1))));
                 callback();
                 return;
             }
