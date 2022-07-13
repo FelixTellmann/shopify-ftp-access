@@ -428,6 +428,7 @@ var ftpd = require("./lib/ftpd");
                             return [3, 4];
                         case 1:
                             _a.trys.push([1, 3, , 4]);
+                            this.itemCache[path] = __assign(__assign({}, item), { downloaded_at: Date.now() });
                             return [4, this.config.API.get({
                                     path: "themes/".concat(theme.id, "/assets"),
                                     query: {
