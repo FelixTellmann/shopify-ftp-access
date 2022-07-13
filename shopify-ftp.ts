@@ -382,6 +382,7 @@ const ftpd = require("./lib/ftpd");
     },
 
     writeFile: function (path, data, callback) {
+      console.log(this.itemCache[path]);
       if (this.itemCache[path]?.downloaded_at > Date.now() - 1000 * 30) {
         console.log(chalk.yellowBright(`Downloaded less than 30s ago: ${path.split("/").at(-1)}`));
         callback();
