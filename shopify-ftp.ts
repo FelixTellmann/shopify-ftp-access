@@ -382,7 +382,7 @@ const ftpd = require("./lib/ftpd");
     },
 
     writeFile: function (path, data, callback) {
-      if (this.itemCache[path]?.downloaded_at > Date.now() - 1000 * 5) {
+      if (this.itemCache[path]?.downloaded_at > Date.now() - 1000 * 15) {
         console.log(chalk.yellowBright(`Downloaded less than 5s ago: ${path.split("/").at(-1)}`));
         callback();
         return;
