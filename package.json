@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "mocha test",
-    "build": "tsc"
+    "build": "tsc",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
