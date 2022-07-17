@@ -2,7 +2,8 @@
 
 This runs a local FTP server (on localhost) that will communicate with Shopify over HTTP API and allows you to upload/download/edit your theme files and assets using your favorite FTP client.
 
-Note: this tool is built with [Node.js](https://nodejs.org) and is installed via [npm](https://www.npmjs.org) so make sure to have Node installed. I have tested this on Mac and Windows. Please [submit an issue](https://github.com/sstur/shopify-ftp/issues) if you come across any bugs.
+Note: this tool is built with [Node.js](https://nodejs.org) and is installed via [npm](https://www.npmjs.org) so make sure to have Node installed. I have tested this on Mac and Windows.
+
  
 ### Installation:
 
@@ -41,9 +42,5 @@ Open your favorite FTP client, for instance [FileZilla](https://filezilla-projec
 Then save/connect and you should be able to browse your assets and templates including upload, delete, rename, download and move. When you first connect, you should see a list of folders which corresponds to your different themes. Choose your theme and go into that directory. There you will see a few directories (assets, config, layout, snippets, templates). You can add/rename/delete files from these directories, but you will not be able to create/delete sub-directories due to limitations in place by Shopify. You must use the folder structure that exists.
 
 Note: Your username contains __both__ your API key and your store name (separated by `@`).
-
-I'd like to get this working with [ExpanDrive](http://www.expandrive.com/) to mount as a local directory on OS X. However, currently this isn't possible because Shopify API doesn't support upload/download ranges (partial files).
-
-[Follow me on Twitter](https://twitter.com/sstur_) for updates!
 
 Have fun.
