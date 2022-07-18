@@ -309,6 +309,7 @@ const ftpd = require("./lib/ftpd");
             tries: 20,
           });
           console.log(chalk.green(`Deleted: ${path.split("/").at(-1)}`));
+          callback();
         } catch (err) {
           console.log(chalk.red(`Could not delete ${path.split("/").at(-1)}`));
           console.log(err.message);
@@ -368,13 +369,13 @@ const ftpd = require("./lib/ftpd");
               ...item,
               downloaded_at: Date.now(),
             };
+            console.log(chalk.green(`Read File: ${path.split("/").at(-1)}`));
             callback(
               null,
               body.asset.value
                 ? Buffer.from(body.asset.value)
                 : Buffer.from(body.asset.attachment, "base64")
             );
-            console.log(chalk.green(`Read File: ${path.split("/").at(-1)}`));
           } catch (err) {
             console.log(chalk.red(`Could not read ${path.split("/").at(-1)}`));
             console.log(err.message);
