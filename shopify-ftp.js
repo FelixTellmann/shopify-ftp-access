@@ -374,6 +374,7 @@ var ftpd = require("./lib/ftpd");
                         case 2:
                             _a.sent();
                             console.log(chalk.green("Deleted: ".concat(path.split("/").at(-1))));
+                            callback();
                             return [3, 4];
                         case 3:
                             err_3 = _a.sent();
@@ -439,10 +440,10 @@ var ftpd = require("./lib/ftpd");
                         case 2:
                             body = (_a.sent()).body;
                             this.itemCache[path] = __assign(__assign({}, item), { downloaded_at: Date.now() });
+                            console.log(chalk.green("Read File: ".concat(path.split("/").at(-1))));
                             callback(null, body.asset.value
                                 ? Buffer.from(body.asset.value)
                                 : Buffer.from(body.asset.attachment, "base64"));
-                            console.log(chalk.green("Read File: ".concat(path.split("/").at(-1))));
                             return [3, 4];
                         case 3:
                             err_4 = _a.sent();
