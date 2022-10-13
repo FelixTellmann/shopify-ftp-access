@@ -165,6 +165,7 @@ var ftpd = require("./lib/ftpd");
                 var themeName, theme;
                 var _this = this;
                 return __generator(this, function (_a) {
+                    console.log(path);
                     themeName = path.slice(1).split("/")[0];
                     theme = this.itemCache["/".concat(themeName)];
                     if (theme)
