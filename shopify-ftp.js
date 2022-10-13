@@ -578,6 +578,7 @@ var ftpd = require("./lib/ftpd");
         };
     }
     function getNames(list) {
+        console.log(list);
         return list.map(function (item) {
             return item.name;
         });
