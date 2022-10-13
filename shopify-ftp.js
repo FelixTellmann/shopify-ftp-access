@@ -165,7 +165,6 @@ var ftpd = require("./lib/ftpd");
                 var themeName, theme;
                 var _this = this;
                 return __generator(this, function (_a) {
-                    console.log(path);
                     themeName = path.slice(1).split("/")[0];
                     theme = this.itemCache["/".concat(themeName)];
                     if (theme)
@@ -198,9 +197,11 @@ var ftpd = require("./lib/ftpd");
                         case 1:
                             body = (_a.sent()).body;
                             body.themes.forEach(function (theme) {
+                                if (/\//gi.test(theme.name)) {
+                                    return;
+                                }
                                 _this.itemCache["/".concat(theme.name.replace(/\//g, "-"))] = theme;
                             });
-                            console.log(this.itemCache);
                             callback(null, body.themes);
                             return [2];
                     }

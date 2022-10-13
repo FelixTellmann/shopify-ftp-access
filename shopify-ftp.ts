@@ -125,7 +125,6 @@ const ftpd = require("./lib/ftpd");
 
     //get theme from cache for specified file path
     getTheme: async function (path, callback) {
-      console.log(path);
       const themeName = path.slice(1).split("/")[0];
       const theme = this.itemCache[`/${themeName}`];
       if (theme) return callback(null, theme);
@@ -149,9 +148,11 @@ const ftpd = require("./lib/ftpd");
       });
 
       body.themes.forEach((theme) => {
+        if (/\//gi.test(theme.name)) {
+          return;
+        }
         this.itemCache[`/${theme.name.replace(/\//g, "-")}`] = theme;
       });
-      console.log(this.itemCache);
       callback(null, body.themes);
     },
 
