@@ -150,7 +150,7 @@ const ftpd = require("./lib/ftpd");
       body.themes.forEach((theme) => {
         this.itemCache[`/${theme.name.replace(/\//g, "-")}`] = theme;
       });
-
+      console.log(this.itemCache);
       callback(null, body.themes);
     },
 
@@ -504,11 +504,11 @@ const ftpd = require("./lib/ftpd");
 
   function getNames(list) {
     return list.map((item) => {
-      return item.name
-        .replace(/[^\w\d]/gi, "-")
+      return item.name;
+      /* .replace(/[^\w\d]/gi, "-")
         .replace(/^(-*)/gi, "")
         .replace(/(-*)$/gi, "")
-        .replace(/(--+)/gi, "-");
+        .replace(/(--+)/gi, "-");*/
     });
   }
 })();

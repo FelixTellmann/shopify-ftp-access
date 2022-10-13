@@ -199,6 +199,7 @@ var ftpd = require("./lib/ftpd");
                             body.themes.forEach(function (theme) {
                                 _this.itemCache["/".concat(theme.name.replace(/\//g, "-"))] = theme;
                             });
+                            console.log(this.itemCache);
                             callback(null, body.themes);
                             return [2];
                     }
@@ -579,11 +580,7 @@ var ftpd = require("./lib/ftpd");
     }
     function getNames(list) {
         return list.map(function (item) {
-            return item.name
-                .replace(/[^\w\d]/gi, "-")
-                .replace(/^(-*)/gi, "")
-                .replace(/(-*)$/gi, "")
-                .replace(/(--+)/gi, "-");
+            return item.name;
         });
     }
 })();
