@@ -503,9 +503,12 @@ const ftpd = require("./lib/ftpd");
   }
 
   function getNames(list) {
-    console.log(list);
     return list.map((item) => {
-      return item.name;
+      return item.name
+        .replace(/[^\w\d]/gi, "-")
+        .replace(/^(-*)/gi, "")
+        .replace(/(-*)$/gi, "")
+        .replace(/(--+)/gi, "-");
     });
   }
 })();
