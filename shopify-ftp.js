@@ -202,7 +202,7 @@ var ftpd = require("./lib/ftpd");
                                 }
                                 _this.itemCache["/".concat(theme.name.replace(/\//g, "-"))] = theme;
                             });
-                            callback(null, body.themes);
+                            callback(null, body.themes.filter(function (theme) { return !/\//gi.test(theme.name); }));
                             return [2];
                     }
                 });

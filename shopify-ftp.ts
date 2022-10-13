@@ -153,7 +153,10 @@ const ftpd = require("./lib/ftpd");
         }
         this.itemCache[`/${theme.name.replace(/\//g, "-")}`] = theme;
       });
-      callback(null, body.themes);
+      callback(
+        null,
+        body.themes.filter((theme) => !/\//gi.test(theme.name))
+      );
     },
 
     getAssets: async function (theme, callback) {
