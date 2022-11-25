@@ -424,6 +424,7 @@ var ftpd = require("./lib/ftpd");
                                 return [2];
                             }
                             if (!item.public_url) return [3, 1];
+                            console.log(chalk.green({ publicUrl: item.public_url }));
                             request({ url: item.public_url, encoding: null }, function (error, response, body) {
                                 if (error)
                                     return callback(error);
