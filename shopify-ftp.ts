@@ -355,6 +355,7 @@ const ftpd = require("./lib/ftpd");
           item.public_url &&
           !/\.(js|css|scss|ts|jsx|tsx|min)$/gi.test(item.public_url.split("?")[0])
         ) {
+          console.log(chalk.greenBright(`Read Asset File: ${path.split("/").at(-1)}`));
           request({ url: item.public_url, encoding: null }, (error, response, body) => {
             if (error) return callback(error);
             callback(null, body);
