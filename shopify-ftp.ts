@@ -352,7 +352,7 @@ const ftpd = require("./lib/ftpd");
           return;
         }
         if (item.public_url) {
-          console.log(chalk.green({ publicUrl: item.public_url }));
+          console.log(item.public_url);
           request({ url: item.public_url, encoding: null }, (error, response, body) => {
             if (error) return callback(error);
             callback(null, body);
