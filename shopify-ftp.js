@@ -423,8 +423,8 @@ var ftpd = require("./lib/ftpd");
                                 });
                                 return [2];
                             }
-                            if (!item.public_url) return [3, 1];
-                            console.log(item.public_url);
+                            if (!(item.public_url &&
+                                !/\.(js|css|scss|ts|jsx|tsx|min)$/gi.test(item.public_url.split("?")[0]))) return [3, 1];
                             request({ url: item.public_url, encoding: null }, function (error, response, body) {
                                 if (error)
                                     return callback(error);
