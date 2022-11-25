@@ -1,6 +1,6 @@
 {
   "name": "shopify-ftp-access",
-  "version": "3.0.25",
+  "version": "3.0.26",
   "description": "FTP Proxy for Shopify",
   "main": "shopify.js",
   "bin": {
