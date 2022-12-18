@@ -31,7 +31,7 @@
     "dateformat": "^1.0.7-1.2.3",
     "fx-style": "^1.6.17",
     "request": "^2.47.0",
-    "shopify-typed-node-api": "^2.0.18",
+    "shopify-typed-node-api": "^2.1.0",
     "stat-mode": "^1.0.0",
     "typescript": "^4.7.4"
   }
